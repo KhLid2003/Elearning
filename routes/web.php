@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('user.index');
+});
+Route::get('/about', function () {
+    return view('user.about');
+});
+Route::get('/courses', function () {
+    return view('user.courses');
+});
+Route::get('/contact', function () {
+    return view('user.contact');
+});
+Route::get('/francais', function () {
+    return view('user.francais');
+});
+Route::get('/anglais', function () {
+    return view('user.anglais');
+});
+Route::get('/allemand', function () {
+    return view('user.allemand');
 });
 
 Route::get('/dashboard', function () {
