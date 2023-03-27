@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +39,27 @@ Route::get('/anglais', function () {
 Route::get('/allemand', function () {
     return view('user.allemand');
 });
+Route::get('/register', function () {
+    return view('auth.register');
+});
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+// admin
+
+Route::get('/home', function () {
+    return view('admin.index');
+});
+Route::get('/message', [AdminController::class , 'messages']);
+Route::get('/clients', [AdminController::class , 'clients']);
+Route::get('/messageShow/{id}', [AdminController::class , 'messageShow']);
+Route::delete('/messageDestroy/{id}', [AdminController::class , 'messageDestroy']);
+
+
+Route::get('/redirect',[RedirectController::class , 'redirect']);
+
+Route::post('message',[MessageController::class, 'message']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

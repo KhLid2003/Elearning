@@ -4,6 +4,11 @@
     @include('user.head')
 
     <body>
+
+        {{-- sweet alert --}}
+
+        @include('sweetalert::alert')
+
         <!-- Spinner Start -->
         <div
             id="spinner"
